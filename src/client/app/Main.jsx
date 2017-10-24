@@ -55,6 +55,10 @@ fetch.batchUseAfter(({ response, options }, next) => {
   } catch (e) {
     console.error(e);
   }
+
+  console.log('fetch.batchUseAfter, response');
+  console.log(response);
+
   next();
 });
 

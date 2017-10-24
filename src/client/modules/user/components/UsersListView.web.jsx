@@ -110,6 +110,17 @@ class UsersView extends React.PureComponent {
 
     if (loading && !users) {
       return <div className="text-center">Loading...</div>;
+    } else if (!users) {
+      return (
+        <div>
+          {errors &&
+            errors.map(error => (
+              <div className="alert alert-danger" role="alert" key={error.field}>
+                {error.message}
+              </div>
+            ))}
+        </div>
+      );
     } else {
       return (
         <div>
